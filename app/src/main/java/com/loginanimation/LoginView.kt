@@ -11,6 +11,11 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.FrameLayout
 import kotlinx.android.synthetic.main.login_view.view.*
 import com.devs.vectorchildfinder.VectorChildFinder
+import com.loginanimation.YetStates.STATE_FOCUS
+import com.loginanimation.YetStates.STATE_INITIAL
+import com.loginanimation.YetStates.STATE_LAUGHING
+import com.loginanimation.YetStates.STATE_LOOKING
+import com.loginanimation.YetStates.STATE_NEUTRAL
 
 /**
  * Created by rafaela.araujo on 02/04/18.
@@ -19,41 +24,16 @@ class LoginView(context: Context, attr: AttributeSet? = null) : FrameLayout(cont
 
     private lateinit var vector: VectorChildFinder
 
-    private val STATE_INITIAL = intArrayOf(
-            R.attr.initial, -R.attr.looking, -R.attr.hidding_eyes, -R.attr.email_focus, -R.attr.laughing
-    )
-
-    private val STATE_LOOKING = intArrayOf(
-            -R.attr.initial, R.attr.looking, -R.attr.hidding_eyes, -R.attr.email_focus, -R.attr.laughing
-    )
-
-    private val STATE_FOCUS = intArrayOf(
-            -R.attr.initial, -R.attr.looking, R.attr.hidding_eyes, -R.attr.email_focus, -R.attr.laughing
-    )
-
-    private val STATE_LAUGHING = intArrayOf(
-            -R.attr.initial, -R.attr.looking, -R.attr.hidding_eyes, -R.attr.email_focus, R.attr.laughing
-    )
-
-    private val STATE_NEUTRAL = intArrayOf(
-            -R.attr.initial, R.attr.looking, -R.attr.hidding_eyes, -R.attr.email_focus, -R.attr.laughing
-    )
-
     init {
         LayoutInflater.from(context).inflate(R.layout.login_view, this)
         initViewActions()
-
     }
 
     private fun initViewActions() {
         changeImageState(STATE_INITIAL)
 
         rootView.setOnClickListener {
-            image.setImageDrawable(context.getDrawable(R.drawable.asl_yet))
-            changeImageState(STATE_INITIAL)
-            edit_text_password.clearFocus()
-            edit_text_email.clearFocus()
-            hideSoftKeyboard()
+            returnToInitialState()
         }
 
         edit_text_password.setOnFocusChangeListener { _, b ->
@@ -69,12 +49,18 @@ class LoginView(context: Context, attr: AttributeSet? = null) : FrameLayout(cont
             if (b) {
                 changeImageState(STATE_FOCUS)
             } else {
-                image.setImageDrawable(context.getDrawable(R.drawable.asl_yet))
                 changeImageState(STATE_INITIAL)
             }
         }
 
         edit_text_email.addTextChangedListener(this)
+    }
+
+    private fun returnToInitialState() {
+        changeImageState(STATE_INITIAL)
+        edit_text_password.clearFocus()
+        edit_text_email.clearFocus()
+        hideSoftKeyboard()
     }
 
     private fun updateFaceView(charSequenceSize: Int, before: Int) {
@@ -84,6 +70,7 @@ class LoginView(context: Context, attr: AttributeSet? = null) : FrameLayout(cont
             Handler().postDelayed({
                 changeVectorParameters(charSequenceSize)
             }, 500)
+
         } else if (charSequenceSize <= 30) {
             changeVectorParameters(charSequenceSize)
 
@@ -137,9 +124,9 @@ class LoginView(context: Context, attr: AttributeSet? = null) : FrameLayout(cont
     override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
     }
 
-    override fun onTextChanged(p0: CharSequence?, start: Int, before: Int, after: Int) {
-        if (p0 != null && p0.isNotEmpty()) {
-            updateFaceView(p0.length, before)
+    override fun onTextChanged(s: CharSequence, start: Int, before: Int, after: Int) {
+        if (s.isNotEmpty()) {
+            updateFaceView(s.length, before)
         } else {
             updateFaceView(0, 0)
         }

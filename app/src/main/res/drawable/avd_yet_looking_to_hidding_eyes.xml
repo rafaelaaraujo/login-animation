@@ -18,7 +18,7 @@
         <aapt:attr name="android:animation">
             <objectAnimator
                 android:propertyName="translateY"
-                android:duration="800"
+                android:duration="700"
                 android:valueFrom="500"
                 android:valueTo="10"
                 android:valueType="floatType"
