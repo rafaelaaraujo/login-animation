@@ -1,0 +1,40 @@
+<!--
+  Copyright 2017 Saul Molinero
+  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+  in compliance with the License. You may obtain a copy of the License at
+  http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software distributed under the License
+  is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+  or implied. See the License for the specific language governing permissions and limitations under
+  the License.
+  -->
+
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:drawable="@drawable/vd_yet_email">
+
+    <target android:name="path_25">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="400"
+                android:interpolator="@android:interpolator/fast_out_slow_in"
+                android:propertyName="pathData"
+                android:valueFrom="M 95 104.2 C 95 104.2 95 104.2 95 104.2 L 100 104.2 C 101.667 104.2 103.333 104.2 105 104.2 C 107.25 104.2 109.3 103.275 110.787 101.787 C 112.275 100.3 113.2 98.25 113.2 96 C 113.2 95.333 113.2 94.667 113.2 94 C 113.2 92.8 112.2 91.8 111 91.8 C 107.333 91.8 103.667 91.8 100 91.8 C 96.333 91.8 92.667 91.8 89 91.8 C 87.8 91.8 86.8 92.8 86.8 94 C 86.8 94.667 86.8 95.333 86.8 96 C 86.8 98.25 87.725 100.3 89.213 101.787 C 90.7 103.275 92.75 104.2 95 104.2"
+                android:valueTo="M 98.4 101 C 98.8 101 99.8 101 100.2 101 L 100.2 101 C 100.5 101 101.7 101 102.1 101.1 C 104.7 100.8 107.4 100 110 98.6 C 110.7 98.2 111 97.4 110.6 96.7 C 110.4 96.3 109.9 96 109.4 96 C 109.2 96 109 96.1 108.8 96.2 C 105.9 97.8 103 98.5 100.2 98.5 C 97.4 98.5 94.6 97.7 91.6 96.2 C 91.5 96.1 91.2 96 91 96 C 90.5 96 90 96.2 89.8 96.7 C 89.5 97.3 89.7 98.2 90.4 98.5 C 93.1 99.9 95.7 100.7 98.4 101"
+                android:valueType="pathType" />
+        </aapt:attr>
+    </target>
+    <target android:name="group_17">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="200"
+                android:interpolator="@android:anim/anticipate_interpolator"
+                android:propertyName="translateX"
+                android:startOffset="300"
+                android:valueFrom="0"
+                android:valueTo="0"
+                android:valueType="floatType" />
+        </aapt:attr>
+    </target>
+
+</animated-vector>

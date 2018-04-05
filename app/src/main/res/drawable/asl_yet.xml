@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<animated-selector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/frame_0"
+        android:drawable="@drawable/vd_yet"
+        app:looking="false"
+        app:hidding_eyes="false"
+        app:laughing="false"
+        app:email_focus="false"/>
+
+    <item
+        android:id="@+id/frame_1"
+        android:drawable="@drawable/vd_yet"
+        app:looking="true" />
+
+    <item
+        android:id="@+id/frame_2"
+        android:drawable="@drawable/vd_yet"
+        app:hidding_eyes="true" />
+
+    <item
+        android:id="@+id/frame_3"
+        android:drawable="@drawable/vd_yet"
+        app:email_focus="true" />
+
+    <item
+        android:id="@+id/frame_4"
+        android:drawable="@drawable/vd_yet"
+        app:laughing="true" />
+
+    <transition
+        android:drawable="@drawable/avd_yet_looking_to_hidding_eyes"
+        android:fromId="@id/frame_0"
+        android:toId="@id/frame_1" />
+
+    <transition
+        android:drawable="@drawable/avd_yet_hidding_eyes_to_looking"
+        android:fromId="@id/frame_1"
+        android:toId="@id/frame_0" />
+
+    <transition
+        android:drawable="@drawable/avd_yet_looking_to_email_focus"
+        android:fromId="@id/frame_0"
+        android:toId="@id/frame_2" />
+
+    <transition
+        android:drawable="@drawable/avd_yet_email_focus_to_looking"
+        android:fromId="@id/frame_2"
+        android:toId="@id/frame_0" />
+
+    <transition
+        android:drawable="@drawable/avd_yet_laughing"
+        android:fromId="@id/frame_2"
+        android:toId="@id/frame_4" />
+
+    <transition
+        android:drawable="@drawable/avd_yet_laughing"
+        android:fromId="@id/frame_4"
+        android:toId="@id/frame_2" />
+
+</animated-selector>

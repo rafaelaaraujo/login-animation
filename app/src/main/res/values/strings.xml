@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">loginAnimation</string>
+    <string name="image_login_description">login action image</string>
+    <string name="log_in">Log in</string>
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3A5E77</color>
+    <color name="colorPrimaryDark">#3a5e77</color>
+    <color name="colorAccent">#a9ddf3</color>
+    <color name="darkblue">#217093</color>
+    <color name="medblue">#4eb8dd</color>
+    <color name="lightblue">#ddf1fa</color>
+    <color name="inputbg">#ddf1fa</color>
+
+    <color name="white">#FFF</color>
+    <color name="blue_accent_100">#82b1ff</color>
+    <color name="blue_accent_200">#448aff</color>
+    <color name="blue_50">#e3f2fd</color>
+    <color name="indigo_300">#757DE8</color>
+    <color name="indigo_500">#757DE8</color>
+    <color name="icon_background">#385CA5</color>
+
+    <color name="colorPrimaryLight">@color/indigo_300</color>
+</resources>
