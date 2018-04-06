@@ -76,6 +76,10 @@
                 android:valueType="floatType"
                 android:interpolator="@android:interpolator/fast_out_slow_in"/>
         </aapt:attr>
+
+
     </target>
+
+
 </animated-vector>
 

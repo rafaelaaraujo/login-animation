@@ -83,7 +83,6 @@ class LoginView(context: Context, attr: AttributeSet? = null) : FrameLayout(cont
     private fun changeVectorParameters(charSequenceSize: Int) {
         vector = if (charSequenceSize > 0) {
             VectorChildFinder(context, R.drawable.vd_yet_email_laughing, image)
-
         } else {
             VectorChildFinder(context, R.drawable.vd_yet_email, image)
         }
