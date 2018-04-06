@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.login_view.view.*
 import com.devs.vectorchildfinder.VectorChildFinder
 import com.loginanimation.YetStates.STATE_FOCUS
 import com.loginanimation.YetStates.STATE_INITIAL
-import com.loginanimation.YetStates.STATE_LAUGHING
+import com.loginanimation.YetStates.STATE_SMILE
 import com.loginanimation.YetStates.STATE_LOOKING
 import com.loginanimation.YetStates.STATE_NEUTRAL
 
@@ -49,6 +49,7 @@ class LoginView(context: Context, attr: AttributeSet? = null) : FrameLayout(cont
             if (b) {
                 changeImageState(STATE_FOCUS)
             } else {
+                image.setImageDrawable(context.getDrawable(R.drawable.asl_yet))
                 changeImageState(STATE_INITIAL)
             }
         }
@@ -65,25 +66,18 @@ class LoginView(context: Context, attr: AttributeSet? = null) : FrameLayout(cont
 
     private fun updateFaceView(charSequenceSize: Int, before: Int) {
         if (charSequenceSize == 1 && before == 0) {
-            changeImageState(STATE_LAUGHING)
-
-            Handler().postDelayed({
-                changeVectorParameters(charSequenceSize)
-            }, 500)
+            changeImageState(STATE_SMILE)
 
         } else if (charSequenceSize <= 30) {
             changeVectorParameters(charSequenceSize)
-
-        } else if (charSequenceSize == 0 && before == 1) {
-            image.setImageDrawable(context.getDrawable(R.drawable.asl_yet))
-            changeImageState(STATE_NEUTRAL)
         }
     }
 
     private fun changeVectorParameters(charSequenceSize: Int) {
         vector = if (charSequenceSize > 0) {
-            VectorChildFinder(context, R.drawable.vd_yet_email_laughing, image)
+            VectorChildFinder(context, R.drawable.vd_yet_email_smile, image)
         } else {
+
             VectorChildFinder(context, R.drawable.vd_yet_email, image)
         }
 

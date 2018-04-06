@@ -17,7 +17,7 @@ object YetStates {
             -R.attr.initial, -R.attr.looking, R.attr.hidding_eyes, -R.attr.email_focus, -R.attr.laughing
     )
 
-    val STATE_LAUGHING = intArrayOf(
+    val STATE_SMILE = intArrayOf(
             -R.attr.initial, -R.attr.looking, -R.attr.hidding_eyes, -R.attr.email_focus, R.attr.laughing
     )
 
