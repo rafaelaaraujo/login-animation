@@ -1,2 +1,2 @@
-![Alt Text](https://github.com/rafaelaaraujo/loginAnimation/image_gif.gif)
+![Alt Text](https://github.com/rafaelaaraujo/loginAnimation/blob/master/image_gif.gif)
 
