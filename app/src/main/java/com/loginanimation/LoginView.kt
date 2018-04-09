@@ -49,7 +49,6 @@ class LoginView(context: Context, attr: AttributeSet? = null) : FrameLayout(cont
             if (b) {
                 changeImageState(STATE_FOCUS)
             } else {
-                image.setImageDrawable(context.getDrawable(R.drawable.asl_yet))
                 changeImageState(STATE_INITIAL)
             }
         }
